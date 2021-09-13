@@ -20,7 +20,8 @@ TimerWidget.launch = function(){
 			'default': 			'#ff00ff'
 		};
     
-    cookiesSucked = function(){
+    Game.customStatsMenu.push(function(){
+      CCSE.AppendStateGeneral("Cookies sucked: " + function(){
       var wrinkleCount = 0;
       for(var i in Game.wrinklers){
         var me=Game.wrinklers[i];
@@ -28,10 +29,7 @@ TimerWidget.launch = function(){
       }
       wrinkleCount *= 1.1;
       return Beautify(wrinkleCount);
-    }
-    
-    Game.customStatsMenu.push(function(){
-      CCSE.AppendStateGeneral("Cookies sucked: " + cookiesSucked());
+    }());
      });
 		
 		Game.customStatsMenu.push(function(){
